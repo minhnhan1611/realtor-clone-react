@@ -1,5 +1,13 @@
 {
-    "cSpell.words": [
-        "tailwindcss"
-    ]
+  "cSpell.words": [
+    "appspot",
+    "firebaseapp",
+    "firestore",
+    "kzrcy",
+    "Qlqa",
+    "tailwindcss",
+    "toastify"
+  ],
+  "compile-hero.disable-compile-files-on-did-save-code": true,
+  "typescript.tsdk": "node_modules\\typescript\\lib"
 }
