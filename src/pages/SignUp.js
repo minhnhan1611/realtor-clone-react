@@ -20,6 +20,7 @@ export default function SignUp() {
     const { name, email, password } = formData;
     const navigate = useNavigate();
 
+    // Lưu giá trị thay đổi từ input
     const onChange = (e) => {
         setFormData({
             ...formData,

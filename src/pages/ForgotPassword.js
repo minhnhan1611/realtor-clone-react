@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import OAuth from '../components/OAuth';
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
+import { toast } from 'react-toastify';
 
 export default function ForgotPassword() {
 
@@ -8,6 +10,17 @@ export default function ForgotPassword() {
 
     const onChange = (e) => {
         setEmail(e.target.value);
+    }
+
+    async function onSubmit(e) {
+        e.preventDefault();
+        try {
+            const auth = getAuth();
+            await sendPasswordResetEmail(auth, email);
+            toast.success("Email Was Sent");
+        } catch (error) {
+            toast.error("Could Not Send Reset Password")
+        }
     }
 
     return (
@@ -22,14 +35,14 @@ export default function ForgotPassword() {
                         alt="key" />
                 </div>
                 <div className='w-full md:w-[67%] lg:w-[40%] lg:ml-20'>
-                    <form>
+                    <form onSubmit={onSubmit}>
                         <input className='w-full mb-6 px-4 py-2 text-xl text-gray-700 bg-white border-gray-300 rounded transition ease-in-out' type="email" id='email' value={email} onChange={onChange} placeholder='Email address' />
                         <div className='flex justify-between whitespace-nowrap text-sm sm:text-lg'>
                             <p className='mb-6'>Don't have a account?
                                 <Link to='/sign-up' className='text-red-500 hover:text-red-700 transition duration-200 ease-in-out ml-1'>Register</Link>
                             </p>
                             <p>
-                                <Link to="/sign-in" className='text-sky-500 hover:text-sky-700 transition duration-200 ease-in-out'>Sign In</Link>
+                                <Link to="/sign-in" className='text-sky-500 hover:text-sky-700 transition duration-200 ease-in-out'>Sign In Again</Link>
                             </p>
                         </div>
                         <button className='w-full bg-sky-500 text-white px-7 py-3 text-sm font-medium uppercase rounded shadow-md hover:bg-sky-700 transition duration-150 ease-in-out hover:shadow-lg active:bg-sky-800'
