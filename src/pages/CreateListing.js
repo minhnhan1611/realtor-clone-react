@@ -362,7 +362,7 @@ export default function CreateListing() {
                             <input onChange={onChange}
                                 className='w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center'
                                 min="50"
-                                max="400000000"
+                                max="900000000000"
                                 type='number'
                                 id='regularPrice'
                                 value={regularPrice}
@@ -385,7 +385,7 @@ export default function CreateListing() {
                                 <input onChange={onChange}
                                     className='w-full px-4 py-2 text-xl text-gray-700 bg-white border border-gray-300 rounded transition duration-150 ease-in-out focus:text-gray-700 focus:bg-white focus:border-slate-600 text-center'
                                     min="50"
-                                    max="400000000"
+                                    max="900000000000"
                                     type='number'
                                     id='discountedPrice'
                                     value={discountedPrice}
