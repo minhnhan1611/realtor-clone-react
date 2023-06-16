@@ -28,9 +28,9 @@ export default function Header() {
 
     return (
         <div className='bg-white border-b shadow-sm sticky top-0 z-40'>
-            <header className='flex justify-between items-center px-3 max-w-7xl mx-auto'>
-                <div>
-                    <img onClick={() => { navigate("/") }} className='h-5 cursor-pointer' src='https://static.rdc.moveaws.com/images/logos/rdc-logo-default.svg' alt='logo' />
+            <header className='flex justify-between items-center px-3 py-3 max-w-7xl mx-auto'>
+                <div className="w-24">
+                    <img onClick={() => { navigate("/") }} className='w-[100%] h-auto cursor-pointer' src='https://dgs.net.vn/wp-content/uploads/2017/06/logo-nganh-bat-dong-san-401.jpg' alt='logo' />
                 </div>
                 <div>
                     <ul className='flex space-x-10'>
